@@ -2,15 +2,20 @@ package main
 
 import (
 	"fmt"
-	"sort"
 )
 
 func main() {
-	ages := []int{20, 40, 30}
+	// x := 0
+	// for x < 5 {
+	// 	fmt.Println(x)
+	// 	x++
+	// }
+	names := []string{"ahmed", "ali", "khalid"}
+	// for i := 0; i < len(names); i++ {
+	// 	fmt.Println("the value of i:", names[i])
+	// }
 
-	sort.Ints(ages)
-	fmt.Println(ages)
-
-	index := sort.SearchInts(ages, 1)
-	fmt.Print(index)
+	for index, value := range names {
+		fmt.Printf("the postion index %v and the value is %v \n", index, value)
+	}
 }
