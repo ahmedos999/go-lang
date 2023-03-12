@@ -1,19 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-	// var nameOne = "one"
-	// var nameTwo = "Two"
-	// nameOne = "three"
-	// nameThree := "four"
-	var name string = "ahmed"
-	var age int = 24
-	var forrmated = fmt.Sprintf("My name is %v and my age is %v", name, age)
-	fmt.Println(forrmated)
-	// fmt.Println(nameOne, nameTwo, nameThree)
-
-	var ages = [3]int{1, 2, 3}
-
-	fmt.Println(ages, len(ages))
+	greetings := "hello everybody"
+	test := "test string"
+	fmt.Println(strings.Contains(greetings, "hello"))
+	fmt.Println(strings.ReplaceAll(greetings, "hello", "hey"))
+	fmt.Println("this is to check", test, "how well it did")
 }
