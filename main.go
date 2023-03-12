@@ -2,13 +2,15 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	"sort"
 )
 
 func main() {
-	greetings := "hello everybody"
-	test := "test string"
-	fmt.Println(strings.Contains(greetings, "hello"))
-	fmt.Println(strings.ReplaceAll(greetings, "hello", "hey"))
-	fmt.Println("this is to check", test, "how well it did")
+	ages := []int{20, 40, 30}
+
+	sort.Ints(ages)
+	fmt.Println(ages)
+
+	index := sort.SearchInts(ages, 1)
+	fmt.Print(index)
 }
