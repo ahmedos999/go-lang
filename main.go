@@ -4,18 +4,18 @@ import (
 	"fmt"
 )
 
-func main() {
-	// x := 0
-	// for x < 5 {
-	// 	fmt.Println(x)
-	// 	x++
-	// }
-	names := []string{"ahmed", "ali", "khalid"}
-	// for i := 0; i < len(names); i++ {
-	// 	fmt.Println("the value of i:", names[i])
-	// }
-
-	for index, value := range names {
-		fmt.Printf("the postion index %v and the value is %v \n", index, value)
+func cycleNames(n []string, f func(string)) {
+	for _, v := range n {
+		f(v)
 	}
+}
+
+func sayGreeting(n string) {
+	fmt.Printf("good morning %v \n", n)
+}
+
+func main() {
+
+	names := []string{"ahmed", "ali", "khalid"}
+	cycleNames(names, sayGreeting)
 }
