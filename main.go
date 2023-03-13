@@ -16,6 +16,17 @@ func sayGreeting(n string) {
 
 func main() {
 
-	names := []string{"ahmed", "ali", "khalid"}
-	cycleNames(names, sayGreeting)
+	menu := map[string]float64{
+		"soup":           4.99,
+		"pie":            7.99,
+		"salad":          6.99,
+		"toffee pudding": 3.55,
+	}
+
+	fmt.Println(menu)
+	fmt.Println(menu["pie"])
+
+	for k, v := range menu {
+		fmt.Println(k, ":", v)
+	}
 }
