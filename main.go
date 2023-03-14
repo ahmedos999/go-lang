@@ -15,7 +15,6 @@ func sayGreeting(n string) {
 }
 
 func main() {
-
 	names := []string{"ahmed", "ali", "khalid"}
 	cycleNames(names, sayGreeting)
 }
