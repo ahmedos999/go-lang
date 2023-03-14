@@ -1,13 +1,39 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
+
+func getinput(prompt string, r *bufio.Reader) (string, error) {
+	fmt.Println(prompt)
+	name, err := r.ReadString('\n')
+	return strings.TrimSpace(name), err
+}
+func createBill() bill {
+	reader := bufio.NewReader(os.Stdin)
+	// fmt.Println("Enter Bill Name:")
+	// name, _ := reader.ReadString('\n')
+	// name = strings.TrimSpace(name)
+	// b := newBill(name)
+
+	name, _ := getinput("Enter Bill Name:", reader)
+
+	b := newBill(name)
+	fmt.Println("Created the bill named", b.name)
+	return b
+}
+
+func promptOptions(b bill) {
+	reader := bufio.NewReader(os.Stdin)
+	opt, _ := getinput("chose an option (a - add item | s - save bill | t - add tip)", reader)
+
+	fmt.Println(opt)
+}
 
 func main() {
-	mybill := newBill("mario's bill")
-	fmt.Println(mybill)
-
-	mybill.updateTip(10.0)
-	mybill.addItem("mojito", 20.99)
-
-	fmt.Println(mybill.format())
+	mybill := createBill()
+	promptOptions(mybill)
 }
