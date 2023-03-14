@@ -1,20 +1,15 @@
 package main
 
-import (
-	"fmt"
-)
-
-func cycleNames(n []string, f func(string)) {
-	for _, v := range n {
-		f(v)
-	}
-}
-
-func sayGreeting(n string) {
-	fmt.Printf("good morning %v \n", n)
-}
+import "fmt"
 
 func main() {
+<<<<<<< HEAD
 	names := []string{"ahmed", "ali", "khalid"}
 	cycleNames(names, sayGreeting)
+=======
+	mybill := newBill("mario's bill")
+	fmt.Println(mybill)
+
+	fmt.Println(mybill.format())
+>>>>>>> 3c91b09161518188470eab7c51d8cb74791769ee
 }
